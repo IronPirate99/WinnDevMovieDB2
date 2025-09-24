@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || "Movie Database" %></title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <%- include("../partials/navbar") %>
+
+  <!-- Main content -->
+  <main>
+    <%- body %>
+  </main>
+
+  <!-- Footer -->
+  <%- include("../partials/footer") %>
+
+  <!-- Scripts -->
+  <script src="/js/script.js"></script>
+</body>
+</html>

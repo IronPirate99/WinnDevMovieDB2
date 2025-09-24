@@ -1,0 +1,5 @@
+// setting up . express server.js
+// set up . express server,  serve static files.
+//npm init -y
+//npm install express mongoose ejs body-parser method-override
+
