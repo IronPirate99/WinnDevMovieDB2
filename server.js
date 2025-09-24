@@ -2,33 +2,32 @@
 //npm init -y
 //npm install express mongoose ejs body-parser method-override
 
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const path = require('path');
 
-const express = require('express'); // Importing Express framework
-const bodyParser = require('body-parser'); // To parse incoming request bodies
-const methodOverride = require('method-override'); // To support PUT and DELETE methods in HTML forms
-const path = require('path'); // To handle file paths  
-const db = require('./config/db'); // Importing the database configuration
-const movieRoutes = require('./routes/movies'); // Importing movie routes
+// Ensure the database config is loaded
+require('./config/db');
 
-const app = express(); // Creating an Express application
-const PORT = process.env.PORT || 3000; // Setting the port
+const movieRoutes = require('./routes/movies');
 
-app.set('view engine', 'ejs'); // Setting EJS as the templating engine
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.set('views', path.join(__dirname, 'views')); // Setting the views directory
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static(path.join(__dirname, 'public'))); // Serving static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
-app.use(bodyParser.urlencoded({ extended: true })); // Parsing URL-encoded bodies
-
-app.use(methodOverride('_method')); // Using method-override to support PUT and DELETE methods
-
-app.use('/movies', movieRoutes); // Using movie routes for '/movies' path
+app.use('/movies', movieRoutes);
 
 app.get('/', (req, res) => {
-    res.redirect('/movies'); // Redirecting root to '/movies'
+    res.redirect('/movies');
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`); // Starting the server
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

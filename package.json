@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "method": "^2.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.18.2",
+    "override": "^0.0.1"
+  },
+  "name": "winndevmoviedb2",
+  "version": "1.0.0",
+  "description": "// setting up . express server.js\r // set up . express server,  serve static files.\r //npm init -y\r //npm install express mongoose ejs body-parser method-override",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
