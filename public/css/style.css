@@ -217,3 +217,98 @@ a {
 .main-content {
   padding: 2rem 0;
 }
+
+
+ .filter-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    select, input {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: auto;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    /* //index home // */
+
+    html, body, .container
+{
+    height: 100%; 
+    min-height: 100%;
+}
+
+.first {
+    float: left;
+    width: 20%;
+    height: 30%;
+    background-color: red;
+    padding: 10px;
+    border-radius: 2px;
+    border: #151414;
+}
+
+.second{
+    float: left;
+    width: 20%;
+    height: 70%;
+    
+    background-color: green;
+     padding: 10px;
+}
+
+
+.third{
+    float: right;
+    width: 80%;
+    height: 80%;
+    background-color: blue;
+  padding: 10px;
+}
+
+.fourth {
+    float: right;
+    width: 40%;
+    height: 20%;
+    background-color: #DDDDDD;
+   padding: 10px;
+}
+
+.last{
+    float: right;
+    width: 40%;
+    height: 20%;
+    background-color: yellow;
+     padding: 10px;
+}
