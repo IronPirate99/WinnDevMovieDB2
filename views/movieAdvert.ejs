@@ -1,0 +1,57 @@
+<head>
+  <link rel="stylesheet" href="/css/style.css">  
+</head>
+
+<div class="container">
+  <h1>🎬 Movie Collection</h1>
+
+  <!-- Tabs -->
+  <div class="tab-container">
+    <% movies.forEach((movie, index) => { %>
+      <button 
+        class="tab-button <%= index === 0 ? 'active' : '' %>" 
+        onclick="showMovie('<%= movie.id %>')">
+        <%= movie.title %>
+      </button>
+    <% }) %>
+  </div>
+
+  <!-- Movie content -->
+  <% movies.forEach((movie, index) => { %>
+    <div id="<%= movie.id %>" class="movie-content <%= index === 0 ? 'active' : '' %>">
+      <div class="movie-card">
+        <img src="<%= movie.poster %>" alt="<%= movie.title %> Poster" class="movie-poster">
+        <div class="movie-info">
+          <h2 class="movie-title"><%= movie.title %></h2>
+          <div class="movie-details">
+            <div class="detail-item rating">
+              <div class="detail-label">Rating</div>
+              <div class="detail-value">⭐ <%= movie.rating %></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Length</div>
+              <div class="detail-value"><%= movie.length %></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Year</div>
+              <div class="detail-value"><%= movie.year %></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-label">Genre</div>
+              <div class="detail-value"><%= movie.genre %></div>
+            </div>
+          </div>
+
+          <div class="actors-section">
+            <h3 class="actors-title">Main Cast</h3>
+            <div class="actors-list">
+              <% movie.actors.forEach(actor => { %>
+                <span class="actor-tag"><%= actor %></span>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

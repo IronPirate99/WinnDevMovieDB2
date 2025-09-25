@@ -1,0 +1,37 @@
+  <head>
+    <title>Categories</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <%- include('../partials/navbar', {currentPage: 'categories'}); %>
+  <%- include('../partials/header', {title: 'Categories - WinnDevMovieDB', currentPage: 'categories'}); %>
+
+<body>
+  <div class="container main-content">      
+
+    <h1>Categories</h1>
+    <p>Explore movies by categories.</p>
+    <div class="categories">
+      <div class="category">
+        <h2>Action</h2>
+        <p>High-octane movies filled with excitement and adventure.</p>
+      </div>
+      <div class="category">
+        <h2>Comedy</h2>
+        <p>Laugh-out-loud films to brighten your day.</p>
+      </div>
+      <div class="category">
+        <h2>Drama</h2>
+        <p>Emotionally gripping stories that touch the heart.</p>
+      </div>
+      <div class="category">
+        <h2>Sci-Fi</h2>
+        <p>Futuristic tales exploring the unknown and beyond.</p>
+      </div>
+
+    </div>
+  </div>    
+    <%- include('../partials/footer'); %>
+</body>
+</html> 
+
+
