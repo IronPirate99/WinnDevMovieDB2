@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/header', {title: 'Home - Awesome Website', currentPage: 'home'}); %>
+<head>
+  <meta charset="UTF-8">
+  <title>MovieDB Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
 <body>
-  <%- include('../partials/navbar', {currentPage: 'home'}); %>
-  
-  <div class="container main-content">
-    <h1>Welcome to our Awesome Website</h1>
-    <p>This is the home page content.</p>
-  </div>
 
-  <%- include('../partials/footer', {currentPage: 'home'}); %>
+<h2>Featured Movies</h2>
+<div class="movie-panel">
+  <% featured.forEach(movie => { %>
+    <div class="movie-card">
+      <img src="<%= movie.posterUrl %>" alt="<%= movie.title %>">
+      <p><%= movie.title %></p>
+    </div>
+  <% }) %>
+</div>
 
+<h2>Latest Movies</h2>
+<div class="movie-panel">
+  <% latest.forEach(movie => { %>
+    <div class="movie-card">
+      <img src="<%= movie.posterUrl %>" alt="<%= movie.title %>">
+      <p><%= movie.title %></p>
+    </div>
+  <% }) %>
+</div>
 
+<h2>Classics</h2>
+<div class="movie-panel">
+  <% classics.forEach(movie => { %>
+    <div class="movie-card">
+      <img src="<%= movie.posterUrl %>" alt="<%= movie.title %>">
+      <p><%= movie.title %></p>
+    </div>
+  <% }) %>
+</div>
+
+<script src="/main.js"></script>
 </body>
 </html>

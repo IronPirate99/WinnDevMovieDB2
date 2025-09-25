@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Movies</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/">
+                    <h4>MovieDB</h4>
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/movies">All Movies</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <h2>All Movies</h2>
+        <div class="movie-panel">
+            <% if (movies.length> 0) { %>
+                <% movies.forEach(movie=> { %>
+                    <div class="movie-card">
+                        <a href="/movies/<%= movie._id %>">
+                            <img src="<%= movie.posterUrl %>" alt="<%= movie.title %> Poster">
+                            <p>
+                                <%= movie.title %>
+                            </p>
+                        </a>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <p class="no-movies">No movies found in the database. Please add one.</p>
+                            <% } %>
+        </div>
+    </main>
+
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
