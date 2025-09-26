@@ -1,11 +1,59 @@
+
+<%
+
+const featuredMovies = typeof movies !== 'undefined' && Array.isArray(movies) ? movies.slice(0, 5) : [];
+
+// Example placeholder object in case we don't have 5 movies
+const placeholder = { title: "Placeholder", _id: "#", posterUrl: "" };
+
+// Map the five specific slots to the available movies, filling with placeholders if needed
+const slot1 = featuredMovies[0] || placeholder;
+const slot2 = featuredMovies[1] || placeholder;
+const slot3 = featuredMovies[2] || placeholder;
+const slot4 = featuredMovies[3] || placeholder;
+const slot5 = featuredMovies[4] || placeholder;
+%>
+
 <head>
-    <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 
-<div class="container">
-<div class="first" >first</div>
-<div class="third"   >third</div>
-<div class="second" >second</div>
-<div class="fourth" >fourth</div>
-<div class="last" >last</div>
-</div>​
+<div class="featured-container">
+
+    <a href="/movies/<%= slot1._id %>" class="featured-item first">
+        <% if (slot1.posterUrl) { %>
+            <img src="<%= slot1.posterUrl %>" alt="<%= slot1.title %> Poster">
+        <% } %>
+        <h2><%= slot1.title %></h2>
+        <p><%= slot1.year %></p>
+    </a>
+
+    <a href="/movies/<%= slot2._id %>" class="featured-item second">
+        <% if (slot2.posterUrl) { %>
+            <img src="<%= slot2.posterUrl %>" alt="<%= slot2.title %> Poster">
+        <% } %>
+        <h2><%= slot2.title %></h2>
+    </a>
+
+    <a href="/movies/<%= slot3._id %>" class="featured-item third">
+        <% if (slot3.posterUrl) { %>
+            <img src="<%= slot3.posterUrl %>" alt="<%= slot3.title %> Poster">
+        <% } %>
+        <h2><%= slot3.title %></h2>
+    </a>
+
+    <a href="/movies/<%= slot4._id %>" class="featured-item fourth">
+        <% if (slot4.posterUrl) { %>
+            <img src="<%= slot4.posterUrl %>" alt="<%= slot4.title %> Poster">
+        <% } %>
+        <h2><%= slot4.title %></h2>
+    </a>
+
+    <a href="/movies/<%= slot5._id %>" class="featured-item last">
+        <% if (slot5.posterUrl) { %>
+            <img src="<%= slot5.posterUrl %>" alt="<%= slot5.title %> Poster">
+        <% } %>
+        <h2><%= slot5.title %></h2>
+    </a>
+
+</div>

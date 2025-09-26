@@ -85,4 +85,20 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
+// Route to display all movies
+router.get('/', async (req, res) => {
+    try {
+        
+        const allMovies = await Movie.find();
+        
+        // Use a separate query to get the featured 5
+        const featuredMovies = await Movie.find().sort({ _id: -1 }).limit(5); 
+        res.render('movies/index', { movies: featuredMovies }); 
+        
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 module.exports = router; // Exporting the router to use it in other files
